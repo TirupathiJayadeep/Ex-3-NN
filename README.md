@@ -37,12 +37,14 @@ Step 4 : Test for the XOR patterns.
 
 <H3>Program:</H3>
 
-
+```
 import numpy as np
 import pandas as pd
 import io
 import matplotlib.pyplot as plt
+```
 # Initialize the input vector and output vector for XOR
+```
 x=np.array([[0,0,1,1],[0,1,0,1]])
 y=np.array([[0,1,1,0]])
 #Initialize the structure of  MLP with input ,hidden  and output layer
@@ -79,7 +81,7 @@ for i in range(iterations):
   losses.append(loss)
   da2,dw2,dz1,dw1 = back_prop(m,w1,w2,z1,a1,z2,a2,y)
   w2 = w2-lr*dw2
-  w1 = w1-lr*dw1
+  w1 = w1-lr*dw
 # We plot losses to see how our network is doing
 plt.plot(losses)
 plt.xlabel("EPOCHS")
@@ -100,7 +102,7 @@ test=np.array([[0],[1]])
 predict(w1,w2,test)
 test=np.array([[0],[0]])
 predict(w1,w2,test)
-
+```
 
 <H3>Output:</H3>
 
